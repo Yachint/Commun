@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.activity.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragment_holder"
+            app:layout_constraintTop_toTopOf="@id/bottom_navigation"/>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/colorAccent" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+            app:backgroundTint="?attr/primaryBackground"
+            app:labelVisibilityMode="unlabeled"
+            app:itemIconTint="?attr/primaryText"
+            app:itemTextColor="?attr/primaryText"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_nav_menu"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
