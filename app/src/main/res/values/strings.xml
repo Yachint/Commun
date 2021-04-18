@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Commun</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="userId">roberthoward</string>
+    <string name="sampleText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non nunc ac lorem rhoncus tristique vel eu lorem. Nam convallis tellus dui, quis sodales purus eleifend ac. Fusce ac augue molestie, interdum arcu id, fermentum tellus. Sed vestibulum in ex quis ullamcorper rhoncus.</string>
+</resources>
