@@ -8,13 +8,18 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.yachint.commun.R
 import com.yachint.commun.databinding.FragmentHomeBinding
+import com.yachint.commun.ui.adapters.viewpager.HomeViewPagerAdapter
+import com.yachint.commun.ui.fragment.feed.PersonalisedFeedFragment
+import com.yachint.commun.ui.fragment.feed.TrendingFeedFragment
 
 class HomeFragment : Fragment() {
 
     lateinit var binding: FragmentHomeBinding
+    val personalisedFeedFragment = PersonalisedFeedFragment()
+    val trendingFeedFragment = TrendingFeedFragment()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
 
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_home, container, false
@@ -26,6 +31,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.viewPagerHome.adapter = HomeViewPagerAdapter(
+            requireContext(),
+            requireFragmentManager(),
+            personalisedFeedFragment,
+            trendingFeedFragment
+        )
     }
 
 }

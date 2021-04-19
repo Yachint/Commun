@@ -57,4 +57,5 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.1.0-alpha01"
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'hari.bounceview:bounceview:0.2.0'
 }
