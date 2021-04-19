@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/btnProfilePicture"
                     android:layout_weight="1"
                     android:layout_width="60dp"
                     android:layout_height="50dp"
@@ -41,6 +42,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:id="@+id/btnCommunityHeader"
                         android:layout_marginStart="15dp"
                         android:text="Cars"
                         android:textSize="20sp"
@@ -73,6 +75,7 @@
                             app:tint="?attr/secondaryText" />
 
                         <TextView
+                            android:id="@+id/btnUserId"
                             android:layout_marginStart="5dp"
                             android:text= "@string/userId"
                             android:textSize="15sp"
@@ -146,6 +149,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:id="@+id/btnUpVote"
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.6"
                             android:src="@drawable/ic_up_arrow"
@@ -158,12 +162,13 @@
                             android:gravity="center"
                             android:layout_gravity="center"
                             android:textColor="@color/colorBlue"
-                            android:fontFamily="@font/sf_normal"
+                            android:fontFamily="@font/sf_bold"
                             android:text="245"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"/>
 
                         <ImageView
+                            android:id="@+id/btnDown"
                             android:layout_marginEnd="2dp"
                             android:layout_weight="0.6"
                             android:src="@drawable/ic_down_arrow"
@@ -206,6 +211,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/btnComment"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_comment"
                         android:layout_width="25dp"
@@ -224,6 +230,7 @@
                 </LinearLayout>
 
                 <ImageView
+                    android:id="@+id/btnShare"
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_share"
