@@ -58,4 +58,5 @@ dependencies {
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'hari.bounceview:bounceview:0.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0-beta02'
 }
