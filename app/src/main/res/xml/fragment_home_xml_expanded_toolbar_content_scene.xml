@@ -26,9 +26,9 @@
                android:scaleY="0.5" />
        </KeyFrameSet>
 
-        <OnClick
-            motion:targetId="@id/homeText"
-            motion:clickAction="transitionToStart"/>
+<!--        <OnClick-->
+<!--            motion:targetId="@id/homeText"-->
+<!--            motion:clickAction="transitionToStart"/>-->
 
         <OnSwipe
             motion:dragScale="@android:integer/config_mediumAnimTime"
@@ -63,9 +63,9 @@
                 android:scaleY="0.5" />
         </KeyFrameSet>
 
-        <OnClick
-            motion:targetId="@id/TrendingText"
-            motion:clickAction="transitionToEnd"/>
+<!--        <OnClick-->
+<!--            motion:targetId="@id/TrendingText"-->
+<!--            motion:clickAction="transitionToEnd"/>-->
 
         <OnSwipe
             motion:dragScale="@android:integer/config_mediumAnimTime"

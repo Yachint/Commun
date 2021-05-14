@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -46,6 +47,17 @@ class HomeFragment : Fragment() {
             personalisedFeedFragment,
             trendingFeedFragment
         )
+
+        binding.homeText.setOnClickListener {
+            binding.expandedToolbarContent.transitionToStart()
+            binding.viewPagerHome.currentItem = 0
+
+        }
+
+        binding.TrendingText.setOnClickListener {
+            binding.expandedToolbarContent.transitionToEnd()
+            binding.viewPagerHome.currentItem = 1
+        }
     }
 
 }
