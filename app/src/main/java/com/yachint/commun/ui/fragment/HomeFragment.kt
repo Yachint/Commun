@@ -51,7 +51,6 @@ class HomeFragment : Fragment() {
         binding.homeText.setOnClickListener {
             binding.expandedToolbarContent.transitionToStart()
             binding.viewPagerHome.currentItem = 0
-
         }
 
         binding.TrendingText.setOnClickListener {

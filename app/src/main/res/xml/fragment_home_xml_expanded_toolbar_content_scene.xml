@@ -24,6 +24,16 @@
                android:alpha="0.5"
                android:scaleX="0.5"
                android:scaleY="0.5" />
+           <KeyAttribute
+               motion:motionTarget="@+id/TrendingText"
+               motion:framePosition="0"
+               android:scaleX="0.8"
+               android:scaleY="0.8" />
+           <KeyAttribute
+               motion:motionTarget="@+id/homeText"
+               motion:framePosition="100"
+               android:scaleX="0.8"
+               android:scaleY="0.8" />
        </KeyFrameSet>
 
 <!--        <OnClick-->
@@ -83,7 +93,7 @@
             android:id="@+id/homeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="15dp"
             android:alpha="0.5"
             motion:layout_constraintTop_toTopOf="@id/expanded_toolbar_content"
             motion:layout_constraintLeft_toRightOf="@id/TrendingText"/>
