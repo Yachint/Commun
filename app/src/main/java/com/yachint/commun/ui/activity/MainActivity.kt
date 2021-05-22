@@ -34,9 +34,6 @@ class MainActivity : BaseActivity(),
             .hide(exploreFragment).commit()
         supportFragmentManager.beginTransaction().add(R.id.fragment_holder, profileFragment, "profile")
             .hide(profileFragment).commit()
-
-
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

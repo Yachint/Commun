@@ -15,7 +15,7 @@
     </style>
 
     <style name="LightTheme" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
+<!--        <item name="android:windowBackground">@drawable/splash_screen</item>-->
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="primaryText">@color/lightPrimaryText</item>
         <item name="primaryBackground">@color/lightPrimaryBg</item>
@@ -29,7 +29,7 @@
     </style>
 
     <style name="DarkTheme" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
+<!--        <item name="android:windowBackground">@drawable/splash_screen</item>-->
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="primaryText">@color/darkPrimaryText</item>
         <item name="primaryBackground">@color/darkPrimaryBg</item>
