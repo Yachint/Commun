@@ -1,9 +1,11 @@
 package com.yachint.commun.ui.activity.common
 
 import android.content.SharedPreferences
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.lifecycleScope
+import com.tencent.mmkv.MMKV
 import com.yachint.commun.R
 import com.yachint.commun.data.sharedprefs.PreferencesHelper
 import com.yachint.commun.data.sharedprefs.PreferencesHelper.get
@@ -24,6 +26,11 @@ abstract class BaseActivity: AppCompatActivity() {
         }
     }
 
+    fun initMMKV(){
+        val str = MMKV.initialize(this)
+        Log.d("MMKV", "initMMKV: $str")
+    }
+
     fun initTheme(){
         lifecycleScope.launch {
             val operation = async {
@@ -37,9 +44,11 @@ abstract class BaseActivity: AppCompatActivity() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
             if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-                setTheme(R.style.DarkTheme);
+                setTheme(R.style.DarkTheme)
+                MMKV.defaultMMKV()?.encode("theme", "dark")
             } else {
-                setTheme(R.style.LightTheme);
+                setTheme(R.style.LightTheme)
+                MMKV.defaultMMKV()?.encode("theme", "light")
             }
         }
     }

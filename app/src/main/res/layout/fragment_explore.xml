@@ -4,82 +4,224 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.ExploreFragment">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/primaryBackground">
+        android:layout_height="wrap_content">
 
-        <androidx.cardview.widget.CardView
-                android:layout_margin="15dp"
-                app:cardBackgroundColor="?attr/secondaryBackground"
-                app:cardCornerRadius="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <com.andexert.library.RippleView
+            <LinearLayout
+                android:animateLayoutChanges="true"
+                android:id="@+id/searchShimmer"
+                android:visibility="visible"
+                android:orientation="vertical"
+                android:background="?attr/primaryBackground"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:padding="5dp"
-                    android:layout_marginStart="10dp"
-                    android:orientation="horizontal"
+                <com.facebook.shimmer.ShimmerFrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_base_search"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"/>
-
-                    <TextView
-                        android:textSize="25sp"
-                        android:text="Search"
-                        android:layout_marginStart="5dp"
-                        android:fontFamily="@font/sf_normal"
-                        android:textColor="?attr/primaryText"
+                    <androidx.cardview.widget.CardView
+                        android:layout_margin="15dp"
+                        app:cardCornerRadius="30dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="50dp">
 
-                </LinearLayout>
 
-            </com.andexert.library.RippleView>
+                    </androidx.cardview.widget.CardView>
+                </com.facebook.shimmer.ShimmerFrameLayout>
 
-            </androidx.cardview.widget.CardView>
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                    <androidx.cardview.widget.CardView
+                        android:layout_margin="15dp"
+                        app:cardCornerRadius="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"/>
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/suggestViewPager"
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_margin="15dp"
+                        app:cardCornerRadius="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="550dp"/>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:animateLayoutChanges="true"
+                android:id="@+id/searchContent"
+                android:visibility="gone"
                 android:orientation="vertical"
-                android:clipChildren="false"
-                android:clipToPadding="false"
                 android:layout_width="match_parent"
-                android:layout_height="240dp"/>
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp"
+                android:background="?attr/primaryBackground">
 
-            <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-                android:id="@+id/pagerControl"
-                android:layout_gravity="end|center"
-                android:rotation="90"
-                app:dotsColor="@color/colorWhite"
-                app:dotsStrokeColor="@color/grey"
-                app:dotsCornerRadius="8dp"
-                app:dotsSize="14dp"
-                app:dotsSpacing="4dp"
-                app:dotsStrokeWidth="2dp"
-                android:layout_marginBottom="35dp"
-                android:layout_marginEnd="-55dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_margin="15dp"
+                    app:cardBackgroundColor="?attr/secondaryBackground"
+                    app:cardCornerRadius="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-        </FrameLayout>
+                    <com.andexert.library.RippleView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-    </LinearLayout>
+                        <LinearLayout
+                            android:padding="5dp"
+                            android:layout_marginStart="10dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_base_search"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"/>
+
+                            <TextView
+                                android:textSize="25sp"
+                                android:text="Search"
+                                android:layout_marginStart="5dp"
+                                android:fontFamily="@font/sf_normal"
+                                android:textColor="?attr/primaryText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                    </com.andexert.library.RippleView>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:visibility="invisible"
+                    android:layout_margin="15dp"
+                    android:id="@+id/rvFilter"
+                    tools:listitem="@layout/filter_search_item_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+                <FrameLayout
+                    android:id="@+id/frameSuggest"
+                    android:visibility="invisible"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/suggestViewPager"
+                        android:orientation="vertical"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp"/>
+
+                    <!--            <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator-->
+                    <!--                android:id="@+id/pagerControl"-->
+                    <!--                android:layout_gravity="end|center"-->
+                    <!--                android:rotation="90"-->
+                    <!--                app:dotsColor="@color/colorWhite"-->
+                    <!--                app:dotsStrokeColor="@color/grey"-->
+                    <!--                app:dotsCornerRadius="8dp"-->
+                    <!--                app:dotsSize="14dp"-->
+                    <!--                app:dotsSpacing="4dp"-->
+                    <!--                app:dotsStrokeWidth="2dp"-->
+                    <!--                android:layout_marginBottom="35dp"-->
+                    <!--                android:layout_marginEnd="-55dp"-->
+                    <!--                android:layout_width="wrap_content"-->
+                    <!--                android:layout_height="wrap_content"/>-->
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/swipeUpAnim"
+                        android:layout_width="match_parent"
+                        app:lottie_rawRes="@raw/swipe_up"
+                        app:lottie_loop="true"
+                        app:lottie_autoPlay="true"
+                        android:layout_height="240dp"/>
+
+                </FrameLayout>
+
+                <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+                    android:visibility="invisible"
+                    android:id="@+id/pagerControl"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    app:dotsColor="@color/colorWhite"
+                    app:dotsStrokeColor="@color/grey"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSize="14dp"
+                    app:dotsSpacing="4dp"
+                    app:dotsStrokeWidth="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardSearchList"
+                    android:visibility="invisible"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="?attr/secondaryBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="10dp"
+                            android:text="My Communities"
+                            android:textSize="18sp"
+                            android:textColor="?attr/primaryText"
+                            android:fontFamily="@font/sf_bold"
+                            android:padding="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvSearchList"
+                            tools:listitem="@layout/feed_search_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
 
 </layout>
