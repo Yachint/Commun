@@ -21,9 +21,11 @@ class MainActivity : BaseActivity(),
     val exploreFragment = ExploreFragment()
     val profileFragment = ProfileFragment()
     var activeFragment: Fragment = homeFragment
+    var isExploreLoaded = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initMMKV()
         initTheme()
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         supportActionBar?.hide()
@@ -49,6 +51,10 @@ class MainActivity : BaseActivity(),
                 supportFragmentManager.beginTransaction().hide(activeFragment)
                     .show(exploreFragment).commit()
                 activeFragment = exploreFragment
+                if(!isExploreLoaded){
+                    isExploreLoaded = true
+                    exploreFragment.triggerDataLoad()
+                }
                 true
             }
 

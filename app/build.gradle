@@ -42,8 +42,8 @@ android {
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core-ktx:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -52,7 +52,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.31'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
-    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.core:core-ktx:1.5.0'
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
     implementation "androidx.viewpager2:viewpager2:1.1.0-alpha01"
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
@@ -61,5 +61,12 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0-beta02'
     implementation 'com.patrickpissurno:ripple-effect:1.3.1'
     implementation 'com.tbuonomo:dotsindicator:4.2'
-
+    implementation 'com.airbnb.android:lottie:3.4.0'
+    implementation 'com.github.skydoves:balloon:1.3.4'
+    implementation 'com.tencent:mmkv-static:1.2.9'
+    implementation 'com.google.dagger:dagger:2.36'
+    kapt 'com.google.dagger:dagger-compiler:2.36'
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 }
